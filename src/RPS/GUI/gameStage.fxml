@@ -2,58 +2,50 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.GameStage">
+<AnchorPane id="gamePane" fx:id="gamePane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.GameStage">
    <children>
-      <Button fx:id="btnDifficulty" layoutX="50.0" layoutY="105.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="187.0" text="Difficulty">
+      <Button fx:id="btnRock" layoutX="30.0" layoutY="211.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="148.0" text="Rock">
          <font>
             <Font size="24.0" />
          </font></Button>
-      <TextField fx:id="tfPlayerName" layoutX="50.0" layoutY="32.0" prefHeight="60.0" prefWidth="187.0" promptText="Player name">
+      <Button fx:id="btnPaper" layoutX="194.0" layoutY="211.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="148.0" text="Paper">
          <font>
             <Font size="24.0" />
-         </font></TextField>
-      <Button fx:id="btnRock" layoutX="54.0" layoutY="222.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Rock">
-         <font>
-            <Font size="36.0" />
          </font></Button>
-      <Button fx:id="btnPaper" layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Paper">
+      <Button fx:id="btnScissors" layoutX="366.0" layoutY="211.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="155.0" text="Scissors">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font></Button>
-      <Button fx:id="btnScissors" layoutX="54.0" layoutY="422.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" text="Scissors">
-         <font>
-            <Font size="36.0" />
-         </font></Button>
-      <ImageView fitHeight="286.0" fitWidth="212.0" layoutX="760.0" layoutY="216.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitWidth="212.0" layoutX="744.0" layoutY="244.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../IMG/Vector_Perkins.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblPlayerName" layoutX="433.0" layoutY="35.0" prefHeight="18.0" prefWidth="265.0" text="Label">
+      <Label fx:id="lblPlayerName" layoutX="178.0" layoutY="35.0" prefHeight="54.0" prefWidth="180.0" text="PLAYER">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lblVS" layoutX="644.0" layoutY="35.0" prefHeight="33.0" prefWidth="112.0" text="VS">
+      <Label fx:id="lblVS" layoutX="444.0" layoutY="36.0" prefHeight="33.0" prefWidth="112.0" text="VS">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lblEnemy" layoutX="775.0" layoutY="34.0" prefHeight="44.0" prefWidth="103.0" text="Label">
+      <Label fx:id="lblEnemy" layoutX="601.0" layoutY="35.0" prefHeight="54.0" prefWidth="186.0" text="VILLAIN">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="btnSetName" layoutX="256.0" layoutY="33.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="Set name">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
+      <ImageView fitHeight="199.0" fitWidth="159.0" layoutX="120.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/Minion.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnMenu" layoutX="917.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToMenu" text="Menu" />
    </children>
 </AnchorPane>
