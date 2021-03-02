@@ -1,9 +1,14 @@
 package RPS.GUI;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,7 +26,12 @@ public class FirstStage implements Initializable{
     }
 
 
-    public void enterGame(MouseEvent mouseEvent) {
+    public void enterGame(MouseEvent mouseEvent) throws IOException {
+            Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/RPS/GUI/secondStage.fxml"));
+        primaryStage.setTitle("Rock Paper Scissors");
+        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.show();
     }
 
 }

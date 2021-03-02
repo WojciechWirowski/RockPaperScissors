@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/RPS/GUI/firstStage.fxml"));
         primaryStage.setTitle("Rock Paper Scissors");
-        primaryStage.setScene(new Scene(root, 600, 500));
+        primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
     }
 
