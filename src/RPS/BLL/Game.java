@@ -18,54 +18,53 @@ private Move botChoice;
         random = new Random(3);
     }
 
-    public void checkWhoWon(){
+    public String checkWhoWon(){
         if(playerChoice.getRps() == rock){
             if(botChoice.getRps() == rock){
-                youTied();
+                return youTied();
             }
             if(botChoice.getRps() == paper){
-                youLost();
+                return youLost();
             }
             if(botChoice.getRps() == scissors){
-                youWon();
+                return youWon();
             }
         }
         if(playerChoice.getRps() == paper){
             if(botChoice.getRps() == rock){
-                youWon();
+                return youWon();
             }
             if(botChoice.getRps() == paper){
-                youTied();
+                return youTied();
             }
             if(botChoice.getRps() == scissors){
-                youLost();
+                return youLost();
             }
         }
         if(playerChoice.getRps() == scissors){
             if(botChoice.getRps() == rock){
-                youLost();
+                return youLost();
             }
             if(botChoice.getRps() == paper){
-                youWon();
+                return youWon();
             }
             if(botChoice.getRps() == scissors){
-                youTied();
+                return youTied();
             }
         }
-
-
+        return null;
     }
 
-    private void youWon() {
-        System.out.println("You won!");
+    private String youWon() {
+        return "YOU WON!";
     }
 
-    private void youTied() {
-        System.out.println("You tied!");
+    private String youTied() {
+        return "YOU TIED!";
     }
 
-    private void youLost() {
-        System.out.println("You lost!");
+    private String youLost() {
+        return "YOU LOST!";
     }
 
 
@@ -86,6 +85,26 @@ private Move botChoice;
     public void botMove(int rps){
         botChoice = new Move(1, rps);
 
+    }
+
+    public Move getBotChoice() {
+        return botChoice;
+    }
+
+    public Move getPlayerChoice() {
+        return playerChoice;
+    }
+
+    public int getRock() {
+        return rock;
+    }
+
+    public int getPaper() {
+        return paper;
+    }
+
+    public int getScissors() {
+        return scissors;
     }
 
     public void saveMove(int rps){

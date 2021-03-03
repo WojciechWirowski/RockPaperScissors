@@ -5,15 +5,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -21,15 +23,30 @@ import java.util.ResourceBundle;
 
 public class GameStage implements Initializable {
 
+
+
     private Game game;
+
+    @FXML
+    private AnchorPane gamePane;
+
+    @FXML
+    private Label lblPlayer;
+
+    @FXML
+    private ImageView imaMovePlayer;
+
+    @FXML
+    private ImageView imaMoveVillain;
+
+    @FXML
+    private ImageView imaPlayer;
+
+    @FXML
+    private ImageView imaVillain;
+
     @FXML
     private Button btnMenu;
-
-    @FXML
-    private Button btnDifficulty;
-
-    @FXML
-    private TextField tfPlayerName;
 
     @FXML
     private Button btnRock;
@@ -41,19 +58,14 @@ public class GameStage implements Initializable {
     private Button btnScissors;
 
     @FXML
-    private ImageView imageView;
-
-    @FXML
-    private Label lblPlayerName;
-
-    @FXML
     private Label lblVS;
 
     @FXML
     private Label lblEnemy;
 
     @FXML
-    private Button btnSetName;
+    private Text textResult;
+
 
     public GameStage(){
 
@@ -65,8 +77,8 @@ public class GameStage implements Initializable {
         game = new Game();
 
 
-    }
 
+    }
 
     public void backToMenu(ActionEvent actionEvent) throws IOException {
         Stage currentStage = (Stage) btnMenu.getScene().getWindow();
@@ -81,10 +93,31 @@ public class GameStage implements Initializable {
     }
 
 
+    public void villainMovesImages(){
+
+        if(game.getBotChoice().getRps() == game.getRock()){
+            imaMoveVillain.setImage( new Image("RPS/IMG/Rock.png"));
+        }else if(game.getBotChoice().getRps() == game.getPaper()){
+            imaMoveVillain.setImage( new Image("RPS/IMG/Paper.png"));
+        }else {
+            imaMoveVillain.setImage( new Image("RPS/IMG/Scissors.png"));
+        }
+    }
+
+    public void printResult(){
+
+        textResult.setText(game.checkWhoWon());
+    }
+
+
+
     public void moveRock(ActionEvent actionEvent) {
         Random random = new Random();
         game.playerMove(1);
         game.botMove(random.nextInt(3)+1);
+        imaMovePlayer.setImage(new Image("RPS/IMG/Rock.png"));
+        villainMovesImages();
+        printResult();
         game.checkWhoWon();
     }
 
@@ -92,6 +125,9 @@ public class GameStage implements Initializable {
         Random random = new Random();
         game.playerMove(2);
         game.botMove(random.nextInt(3)+1);
+        imaMovePlayer.setImage(new Image("RPS/IMG/Paper.png"));
+        villainMovesImages();
+        printResult();
         game.checkWhoWon();
     }
 
@@ -99,6 +135,9 @@ public class GameStage implements Initializable {
         Random random = new Random();
         game.playerMove(3);
         game.botMove(random.nextInt(3)+1);
+        imaMovePlayer.setImage(new Image("RPS/IMG/Scissors.png"));
+        villainMovesImages();
+        printResult();
         game.checkWhoWon();
     }
 }
