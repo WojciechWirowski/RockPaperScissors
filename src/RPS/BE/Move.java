@@ -3,9 +3,9 @@ package RPS.BE;
 public class Move {
 
     private int id;
-    private String rps;
+    private int rps;
 
-    public Move(int id, String rps){
+    public Move(int id, int rps){
 
         this.id = id;
         this.rps = rps;
@@ -19,11 +19,11 @@ public class Move {
         this.id = id;
     }
 
-    public String getRps() {
+    public int getRps() {
         return rps;
     }
 
-    public void setRps(String rps) {
+    public void setRps(int rps) {
         this.rps = rps;
     }
 }

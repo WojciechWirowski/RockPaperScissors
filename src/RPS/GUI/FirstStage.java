@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.jetbrains.annotations.NotNull;
+
 
 import java.io.IOException;
 import java.net.URL;
