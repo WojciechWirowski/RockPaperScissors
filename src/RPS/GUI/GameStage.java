@@ -1,5 +1,6 @@
 package RPS.GUI;
 
+import RPS.BLL.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,10 +16,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class GameStage implements Initializable {
 
+    private Game game;
     @FXML
     private Button btnMenu;
 
@@ -59,6 +62,7 @@ public class GameStage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        game = new Game();
 
 
     }
@@ -77,4 +81,24 @@ public class GameStage implements Initializable {
     }
 
 
+    public void moveRock(ActionEvent actionEvent) {
+        Random random = new Random();
+        game.playerMove(1);
+        game.botMove(random.nextInt(3)+1);
+        game.checkWhoWon();
+    }
+
+    public void movePaper(ActionEvent actionEvent) {
+        Random random = new Random();
+        game.playerMove(2);
+        game.botMove(random.nextInt(3)+1);
+        game.checkWhoWon();
+    }
+
+    public void moveScissors(ActionEvent actionEvent) {
+        Random random = new Random();
+        game.playerMove(3);
+        game.botMove(random.nextInt(3)+1);
+        game.checkWhoWon();
+    }
 }
