@@ -2,12 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="menuPane" fx:id="menuPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.MenuStage">
+<AnchorPane id="menuPane" fx:id="menuPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../CSS/firstStageStyling.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.MenuStage">
     <children>
         <TextField fx:id="tfPlayerName" layoutX="454.0" layoutY="83.0" prefHeight="60.0" prefWidth="187.0">
             <font>
@@ -19,30 +19,30 @@
                 <Font size="24.0" />
             </font>
         </Button>
-      <CheckBox fx:id="easyMode" layoutX="454.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleEasyMode" text="Easy">
+      <CheckBox id="easyMode" fx:id="easyMode" layoutX="454.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleEasyMode" stylesheets="@../CSS/firstStageStyling.css" text="Easy ">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="normalMode" layoutX="454.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleNormalMode" text="Normal">
+      <CheckBox id="normalMode" fx:id="normalMode" layoutX="454.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleNormalMode" stylesheets="@../CSS/firstStageStyling.css" text="Normal ">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="hardMode" layoutX="454.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleHardMode" text="Hard">
+      <CheckBox id="hardMode" fx:id="hardMode" layoutX="454.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleHardMode" stylesheets="@../CSS/firstStageStyling.css" text="Hard ">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <Text layoutX="240.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player name:">
+      <Label id="textDifficulty" layoutX="316.0" layoutY="205.0" stylesheets="@../CSS/firstStageStyling.css" text="Difficulty: ">
          <font>
             <Font size="36.0" />
          </font>
-      </Text>
-      <Text layoutX="326.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulty:">
+      </Label>
+      <Label id="lblPlayerName" layoutX="220.0" layoutY="88.0" stylesheets="@../CSS/firstStageStyling.css" text="Player Name: ">
          <font>
-            <Font size="24.0" />
+            <Font size="36.0" />
          </font>
-      </Text>
+      </Label>
     </children>
 </AnchorPane>

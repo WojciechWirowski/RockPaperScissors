@@ -16,13 +16,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 public class GameStage implements Initializable {
+
 
 
     private Bot bot;
@@ -74,6 +74,11 @@ public class GameStage implements Initializable {
     @FXML
     private Text textResult;
 
+    @FXML
+    private Label lblToShow;
+
+    public static Label staticlblToShow;
+
 
     public GameStage(){
 
@@ -87,10 +92,7 @@ public class GameStage implements Initializable {
         staticlblPlayer = lblPlayer;
         staticlblEnemy = lblEnemy;
         staticimaVillain = imaVillain;
-
-
-
-
+        staticlblToShow = lblToShow;
 
 
 
@@ -155,11 +157,5 @@ public class GameStage implements Initializable {
         villainMovesImages();
         printResult();
         game.checkWhoWon();
-    }
-
-    public void setDifficulty(){
-
-
-
     }
 }

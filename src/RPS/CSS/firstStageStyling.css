@@ -1,17 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
+
 #startingPane{
-    -fx-background-image: url('../IMG/81+X70pOMNL.jpg');
+    -fx-background-image: url('/RPS/IMG/StartingPaneBackGround.jpg');
 }
 
+#menuPane{
+    -fx-background-image: url('/RPS/IMG/MenuBackground.jpg');
+    -fx-background-size: 100% 100%;
+}
+
+#gamePane{
+    -fx-background-color:
+            linear-gradient(#4da6ff 0%, #757575 100%);
+    }
+
 #lbl1{
-    -fx-font-size: 30;
-    -fx-font-family: 'RocknRoll One', sans-serif; ;
+    -fx-background-color: #00000099;
+    -fx-font-size: 40;
+    -fx-font-family: 'RocknRoll One', sans-serif;
 }
 
 #lbl2{
-    -fx-text-inner-color: #ff0000;
-    -fx-font-size: 30;
-    -fx-font-family: 'RocknRoll One', sans-serif; ;
+    -fx-background-color: #00000099;
+    -fx-font-size: 40;
+    -fx-font-family: 'RocknRoll One', sans-serif;
+}
+
+#easyMode{
+    -fx-background-color: #f1f1f1;
+
+}
+
+#normalMode{
+    -fx-background-color: #f1f1f1;
+
+}
+
+#hardMode{
+    -fx-background-color: #f1f1f1;
+
+}
+
+#textDifficulty{
+    -fx-background-color: #ffffff99;
+
+}
+
+#lblShowNames{
+    -fx-font-family: 'RocknRoll One', sans-serif;
+}
+
+#lblPlayerName{
+    -fx-background-color: #ffffff99;
 }
 

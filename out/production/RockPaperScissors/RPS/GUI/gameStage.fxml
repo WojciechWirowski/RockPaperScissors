@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="gamePane" fx:id="gamePane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.GameStage">
+<AnchorPane id="gamePane" fx:id="gamePane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../CSS/firstStageStyling.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RPS.GUI.GameStage">
     <children>
         <Button fx:id="btnRock" layoutX="10.0" layoutY="250.0" mnemonicParsing="false" onAction="#moveRock" prefHeight="40.0" prefWidth="100.0" text="Rock">
             <font>
@@ -27,12 +27,7 @@
             <Image url="@../IMG/Vector.png" />
          </image>
         </ImageView>
-        <Label fx:id="lblVS" layoutX="444.0" layoutY="36.0" prefHeight="33.0" prefWidth="112.0" text="VS">
-            <font>
-                <Font size="36.0" />
-            </font>
-        </Label>
-        <Label fx:id="lblEnemy" layoutX="601.0" layoutY="35.0" prefHeight="54.0" prefWidth="186.0" text="VILLAIN">
+        <Label id="lblEnemy" fx:id="lblEnemy" layoutX="601.0" layoutY="35.0" opacity="0.0" prefHeight="54.0" prefWidth="186.0" stylesheets="@../CSS/firstStageStyling.css">
             <font>
                 <Font size="36.0" />
             </font>
@@ -50,9 +45,14 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Label fx:id="lblPlayer" layoutX="262.0" layoutY="36.0" text="PLAYER">
+      <Label fx:id="lblPlayer" layoutX="262.0" layoutY="36.0" opacity="0.0">
          <font>
             <Font size="36.0" />
+         </font>
+      </Label>
+      <Label id="lblShowNames" fx:id="lblToShow" alignment="CENTER" layoutX="5.0" layoutY="27.0" prefHeight="70.0" prefWidth="907.0" stylesheets="@../CSS/firstStageStyling.css" text="Label" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
          </font>
       </Label>
     </children>

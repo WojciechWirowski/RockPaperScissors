@@ -60,9 +60,12 @@ public class MenuStage extends GameStage implements Initializable{
         primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
 
-        staticlblPlayer.setText(tfPlayerName.getText());
+
+
 
         setDifficulty();
+        staticlblPlayer.setText(tfPlayerName.getText());
+        staticlblToShow.setText(staticlblPlayer.getText() + "   VS   " + staticlblEnemy.getText());
 
         currentStage.close();
     }
@@ -88,7 +91,7 @@ public class MenuStage extends GameStage implements Initializable{
             normalMode.setSelected(false);
         }
     }
-    
+
 
     public void setDifficulty(){
         bot = new Bot(1);
