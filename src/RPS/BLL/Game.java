@@ -13,6 +13,9 @@ private int scissors = 3;
 private Random random;
 private Move playerChoice;
 private Move botChoice;
+private int easyDifficulty = 1;
+private int normalDifficulty = 2;
+private int hardDifficulty = 3;
     public Game(){
         movesMemory = new ArrayList<>();
         random = new Random(3);
@@ -105,6 +108,18 @@ private Move botChoice;
 
     public int getScissors() {
         return scissors;
+    }
+
+    public int getEasyDifficulty() {
+        return easyDifficulty;
+    }
+
+    public int getNormalDifficulty() {
+        return normalDifficulty;
+    }
+
+    public int getHardDifficulty() {
+        return hardDifficulty;
     }
 
     public void saveMove(int rps){

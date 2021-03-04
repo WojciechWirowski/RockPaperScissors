@@ -1,28 +1,27 @@
 package RPS.GUI;
 
+import RPS.BE.Bot;
+import RPS.BE.Player;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuStage implements Initializable{
+public class MenuStage extends GameStage implements Initializable{
 
+    private Bot bot;
+    private Player player;
 
     @FXML
     private AnchorPane menuPane;
@@ -55,15 +54,17 @@ public class MenuStage implements Initializable{
 
     public void startGame(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage currentStage = (Stage) btnStartGame.getScene().getWindow();
-        currentStage.close();
-
-
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/RPS/GUI/gameStage.fxml"));
         primaryStage.setTitle("Rock Paper Scissors Menu");
         primaryStage.setScene(new Scene(root, 1000, 600));
         primaryStage.show();
 
+        staticlblPlayer.setText(tfPlayerName.getText());
+
+        setDifficulty();
+
+        currentStage.close();
     }
 
     public void handleEasyMode(){
@@ -80,11 +81,32 @@ public class MenuStage implements Initializable{
         }
     }
 
+
     public void handleHardMode(){
         if(hardMode.isSelected()){
             easyMode.setSelected(false);
             normalMode.setSelected(false);
         }
+    }
+
+    public void setDifficulty(){
+        bot = new Bot(1);
+        if(easyMode.isSelected()){
+            bot.setDifficulty(1);
+            staticlblEnemy.setText("Scarlet");
+            staticimaVillain.setImage(new Image("RPS/IMG/Scarlet.png"));
+
+        }else if(normalMode.isSelected()){
+            bot.setDifficulty(2);
+            staticlblEnemy.setText("Vector");
+            staticimaVillain.setImage(new Image("RPS/IMG/Vector.png"));
+
+        }else{
+            bot.setDifficulty(3);
+            staticlblEnemy.setText("Gru");
+            staticimaVillain.setImage(new Image("RPS/IMG/Gru.png"));
+        }
+
     }
 
 }

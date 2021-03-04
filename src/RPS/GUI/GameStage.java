@@ -1,5 +1,6 @@
 package RPS.GUI;
 
+import RPS.BE.Bot;
 import RPS.BLL.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,14 +25,12 @@ import java.util.ResourceBundle;
 public class GameStage implements Initializable {
 
 
-
+    private Bot bot;
     private Game game;
+    private MenuStage menu;
 
     @FXML
     private AnchorPane gamePane;
-
-    @FXML
-    private Label lblPlayer;
 
     @FXML
     private ImageView imaMovePlayer;
@@ -44,6 +43,8 @@ public class GameStage implements Initializable {
 
     @FXML
     private ImageView imaVillain;
+
+    public static ImageView staticimaVillain;
 
     @FXML
     private Button btnMenu;
@@ -63,6 +64,13 @@ public class GameStage implements Initializable {
     @FXML
     private Label lblEnemy;
 
+    public static Label staticlblEnemy;
+
+    @FXML
+    private Label lblPlayer;
+
+    public static Label staticlblPlayer;
+
     @FXML
     private Text textResult;
 
@@ -75,6 +83,14 @@ public class GameStage implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         game = new Game();
+
+        staticlblPlayer = lblPlayer;
+        staticlblEnemy = lblEnemy;
+        staticimaVillain = imaVillain;
+
+
+
+
 
 
 
@@ -139,5 +155,11 @@ public class GameStage implements Initializable {
         villainMovesImages();
         printResult();
         game.checkWhoWon();
+    }
+
+    public void setDifficulty(){
+
+
+
     }
 }

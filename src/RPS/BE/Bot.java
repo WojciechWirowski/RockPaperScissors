@@ -5,7 +5,6 @@ public class Bot {
     private int difficulty;
 
     public Bot(int difficulty){
-
         this.difficulty = difficulty;
     }
 

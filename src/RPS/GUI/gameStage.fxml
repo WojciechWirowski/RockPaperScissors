@@ -22,10 +22,10 @@
             <font>
                 <Font size="19.0" />
             </font></Button>
-        <ImageView fx:id="imaVillain" fitWidth="212.0" layoutX="741.0" layoutY="297.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../IMG/Vector_Perkins.png" />
-            </image>
+        <ImageView fx:id="imaVillain" fitHeight="342.0" fitWidth="266.0" layoutX="718.0" layoutY="257.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMG/Vector.png" />
+         </image>
         </ImageView>
         <Label fx:id="lblVS" layoutX="444.0" layoutY="36.0" prefHeight="33.0" prefWidth="112.0" text="VS">
             <font>
