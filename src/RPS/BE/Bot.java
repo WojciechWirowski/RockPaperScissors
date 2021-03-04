@@ -8,6 +8,8 @@ public class Bot {
         this.difficulty = difficulty;
     }
 
+
+
     public int getDifficulty() {
         return difficulty;
     }

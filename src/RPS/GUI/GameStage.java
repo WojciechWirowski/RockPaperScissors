@@ -113,9 +113,9 @@ public class GameStage implements Initializable {
 
     public void villainMovesImages(){
 
-        if(game.getBotChoice().getRps() == game.getRock()){
+        if(game.getBotChoice() == game.getRock()){
             imaMoveVillain.setImage( new Image("RPS/IMG/Rock.png"));
-        }else if(game.getBotChoice().getRps() == game.getPaper()){
+        }else if(game.getBotChoice() == game.getPaper()){
             imaMoveVillain.setImage( new Image("RPS/IMG/Paper.png"));
         }else {
             imaMoveVillain.setImage( new Image("RPS/IMG/Scissors.png"));

@@ -1,18 +1,16 @@
 package RPS.BLL;
 
-import RPS.BE.Move;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Game {
-ArrayList<Move> movesMemory;
+ArrayList<Integer> movesMemory;
 private int rock = 1;
 private int paper = 2;
 private int scissors = 3;
 private Random random;
-private Move playerChoice;
-private Move botChoice;
+private int playerChoice;
+private int botChoice;
 private int easyDifficulty = 1;
 private int normalDifficulty = 2;
 private int hardDifficulty = 3;
@@ -22,36 +20,36 @@ private int hardDifficulty = 3;
     }
 
     public String checkWhoWon(){
-        if(playerChoice.getRps() == rock){
-            if(botChoice.getRps() == rock){
+        if(playerChoice == rock){
+            if(botChoice == rock){
                 return youTied();
             }
-            if(botChoice.getRps() == paper){
+            if(botChoice == paper){
                 return youLost();
             }
-            if(botChoice.getRps() == scissors){
+            if(botChoice == scissors){
                 return youWon();
             }
         }
-        if(playerChoice.getRps() == paper){
-            if(botChoice.getRps() == rock){
+        if(playerChoice == paper){
+            if(botChoice == rock){
                 return youWon();
             }
-            if(botChoice.getRps() == paper){
+            if(botChoice == paper){
                 return youTied();
             }
-            if(botChoice.getRps() == scissors){
+            if(botChoice == scissors){
                 return youLost();
             }
         }
-        if(playerChoice.getRps() == scissors){
-            if(botChoice.getRps() == rock){
+        if(playerChoice == scissors){
+            if(botChoice == rock){
                 return youLost();
             }
-            if(botChoice.getRps() == paper){
+            if(botChoice == paper){
                 return youWon();
             }
-            if(botChoice.getRps() == scissors){
+            if(botChoice == scissors){
                 return youTied();
             }
         }
@@ -80,21 +78,22 @@ private int hardDifficulty = 3;
     }
 
     public void playerMove(int rps){
-        playerChoice = new Move(movesMemory.size(), rps);
+        playerChoice = rps;
         movesMemory.add(playerChoice);
+        System.out.println(movesMemory.toString());
 
     }
 
     public void botMove(int rps){
-        botChoice = new Move(1, rps);
+        botChoice = rps;
 
     }
 
-    public Move getBotChoice() {
+    public int getBotChoice() {
         return botChoice;
     }
 
-    public Move getPlayerChoice() {
+    public int getPlayerChoice() {
         return playerChoice;
     }
 
@@ -124,6 +123,6 @@ private int hardDifficulty = 3;
 
     public void saveMove(int rps){
 
-        movesMemory.add(new Move(movesMemory.size(), rps));
+        movesMemory.add(rps);
     }
 }
