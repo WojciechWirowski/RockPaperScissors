@@ -1,5 +1,7 @@
 package RPS.BLL;
 
+import RPS.BE.Bot;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,9 +16,11 @@ private int botChoice;
 private int easyDifficulty = 1;
 private int normalDifficulty = 2;
 private int hardDifficulty = 3;
+public Bot bot;
     public Game(){
         movesMemory = new ArrayList<>();
         random = new Random(3);
+        bot = new Bot(1);
     }
 
     public String checkWhoWon(){
@@ -84,8 +88,8 @@ private int hardDifficulty = 3;
 
     }
 
-    public void botMove(int rps){
-        botChoice = rps;
+    public void botMove(){
+        botChoice = bot.botMove();
 
     }
 
@@ -125,4 +129,5 @@ private int hardDifficulty = 3;
 
         movesMemory.add(rps);
     }
+
 }

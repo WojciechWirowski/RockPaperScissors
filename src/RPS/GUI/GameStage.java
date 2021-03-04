@@ -132,7 +132,7 @@ public class GameStage implements Initializable {
     public void moveRock(ActionEvent actionEvent) {
         Random random = new Random();
         game.playerMove(1);
-        game.botMove(random.nextInt(3)+1);
+        game.botMove();
         imaMovePlayer.setImage(new Image("RPS/IMG/Rock.png"));
         villainMovesImages();
         printResult();
@@ -142,7 +142,7 @@ public class GameStage implements Initializable {
     public void movePaper(ActionEvent actionEvent) {
         Random random = new Random();
         game.playerMove(2);
-        game.botMove(random.nextInt(3)+1);
+        game.botMove();
         imaMovePlayer.setImage(new Image("RPS/IMG/Paper.png"));
         villainMovesImages();
         printResult();
@@ -152,7 +152,7 @@ public class GameStage implements Initializable {
     public void moveScissors(ActionEvent actionEvent) {
         Random random = new Random();
         game.playerMove(3);
-        game.botMove(random.nextInt(3)+1);
+        game.botMove();
         imaMovePlayer.setImage(new Image("RPS/IMG/Scissors.png"));
         villainMovesImages();
         printResult();

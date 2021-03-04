@@ -2,6 +2,7 @@ package RPS.GUI;
 
 import RPS.BE.Bot;
 import RPS.BE.Player;
+import RPS.BLL.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ import java.util.ResourceBundle;
 public class MenuStage extends GameStage implements Initializable{
 
     private Bot bot;
+    private Game game;
     private Player player;
 
     @FXML
@@ -95,18 +97,19 @@ public class MenuStage extends GameStage implements Initializable{
 
     public void setDifficulty(){
         bot = new Bot(1);
+        game = new Game();
         if(easyMode.isSelected()){
-            bot.setDifficulty(1);
+            game.bot.setDifficulty(1);
             staticlblEnemy.setText("Scarlet");
             staticimaVillain.setImage(new Image("RPS/IMG/Scarlet.png"));
 
         }else if(normalMode.isSelected()){
-            bot.setDifficulty(2);
+            game.bot.setDifficulty(2);
             staticlblEnemy.setText("Vector");
             staticimaVillain.setImage(new Image("RPS/IMG/Vector.png"));
 
         }else{
-            bot.setDifficulty(3);
+            game.bot.setDifficulty(3);
             staticlblEnemy.setText("Gru");
             staticimaVillain.setImage(new Image("RPS/IMG/Gru.png"));
         }
