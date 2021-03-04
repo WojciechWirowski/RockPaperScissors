@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Game {
-ArrayList<Integer> movesMemory;
+public static ArrayList<Integer> movesMemory;
 private int rock = 1;
 private int paper = 2;
 private int scissors = 3;
@@ -91,6 +91,10 @@ public Bot bot;
     public void botMove(){
         botChoice = bot.botMove();
 
+    }
+
+    public static ArrayList<Integer> getMovesMemory(){
+        return movesMemory;
     }
 
     public int getBotChoice() {
