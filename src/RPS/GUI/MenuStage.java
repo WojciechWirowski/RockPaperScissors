@@ -88,6 +88,7 @@ public class MenuStage extends GameStage implements Initializable{
             normalMode.setSelected(false);
         }
     }
+    
 
     public void setDifficulty(){
         bot = new Bot(1);
