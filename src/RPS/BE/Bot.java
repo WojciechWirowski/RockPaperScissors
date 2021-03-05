@@ -34,6 +34,7 @@ public class Bot {
     }
 
 
+//ANTI ROW OF 3 SAME MOVES//
 
     private int easyMove(ArrayList<Integer> movesList) {
         movesList = Game.getMovesMemory();

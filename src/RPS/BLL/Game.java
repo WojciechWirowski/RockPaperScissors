@@ -31,7 +31,7 @@ public Bot bot;
             if(botChoice == paper){
                 return youLost();
             }
-            if(botChoice == scissors){
+            else{
                 return youWon();
             }
         }
@@ -42,7 +42,7 @@ public Bot bot;
             if(botChoice == paper){
                 return youTied();
             }
-            if(botChoice == scissors){
+            else{
                 return youLost();
             }
         }
@@ -53,14 +53,14 @@ public Bot bot;
             if(botChoice == paper){
                 return youWon();
             }
-            if(botChoice == scissors){
+            else{
                 return youTied();
             }
         }
         return null;
     }
 
-    private String youWon() {
+    public String youWon() {
         return "YOU WON!";
     }
 
@@ -68,7 +68,7 @@ public Bot bot;
         return "YOU TIED!";
     }
 
-    private String youLost() {
+    public String youLost() {
         return "YOU LOST!";
     }
 

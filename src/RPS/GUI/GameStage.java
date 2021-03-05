@@ -24,11 +24,12 @@ import java.util.ResourceBundle;
 public class GameStage implements Initializable {
 
 
-
+    public Label lblScore;
     private Bot bot;
     private Game game;
     private MenuStage menu;
-
+    private int enemyScore = 0;
+    private int userScore = 0;
     @FXML
     private AnchorPane gamePane;
 
@@ -137,6 +138,7 @@ public class GameStage implements Initializable {
         villainMovesImages();
         printResult();
         game.checkWhoWon();
+        addScore();
     }
 
     public void movePaper(ActionEvent actionEvent) {
@@ -147,6 +149,7 @@ public class GameStage implements Initializable {
         villainMovesImages();
         printResult();
         game.checkWhoWon();
+        addScore();
     }
 
     public void moveScissors(ActionEvent actionEvent) {
@@ -157,5 +160,17 @@ public class GameStage implements Initializable {
         villainMovesImages();
         printResult();
         game.checkWhoWon();
+        addScore();
+    }
+
+    public void addScore(){
+        if(game.checkWhoWon() == game.youLost()){
+            enemyScore++;
+            lblScore.setText(userScore + ":" + enemyScore);
+        }if(game.checkWhoWon() == game.youWon()){
+            userScore++;
+            lblScore.setText(userScore + ":" + enemyScore);
+        }
+
     }
 }
