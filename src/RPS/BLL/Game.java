@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class Game {
 public static ArrayList<Integer> movesMemory;
+public static ArrayList<Integer> botMemory;
 private int rock = 1;
 private int paper = 2;
 private int scissors = 3;
@@ -17,8 +18,10 @@ private int easyDifficulty = 1;
 private int normalDifficulty = 2;
 private int hardDifficulty = 3;
 public Bot bot;
+
     public Game(){
         movesMemory = new ArrayList<>();
+        botMemory = new ArrayList<>();
         random = new Random(3);
         bot = new Bot(1);
     }
@@ -57,11 +60,13 @@ public Bot bot;
                 return youTied();
             }
         }
+
         return null;
     }
 
     public String youWon() {
         return "YOU WON!";
+
     }
 
     private String youTied() {
@@ -71,7 +76,6 @@ public Bot bot;
     public String youLost() {
         return "YOU LOST!";
     }
-
 
     public void startGame(){
         //game starts
@@ -84,12 +88,14 @@ public Bot bot;
     public void playerMove(int rps){
         playerChoice = rps;
         movesMemory.add(playerChoice);
-        System.out.println(movesMemory.toString());
+
 
     }
 
     public void botMove(){
         botChoice = bot.botMove();
+        botMemory.add(botChoice);
+        System.out.println(botMemory.toString());
 
     }
 
@@ -104,6 +110,11 @@ public Bot bot;
     public int getPlayerChoice() {
         return playerChoice;
     }
+
+    public static ArrayList<Integer> getBotMemory(){
+        return botMemory;
+    }
+
 
     public int getRock() {
         return rock;

@@ -103,7 +103,7 @@ public class MenuStage extends GameStage implements Initializable{
             staticlblEnemy.setText("Scarlet");
             staticimaVillain.setImage(new Image("RPS/IMG/Scarlet.png"));
 
-        }else if(normalMode.isSelected()){
+        }if(normalMode.isSelected()){
             game.bot.setDifficulty(2);
             staticlblEnemy.setText("Vector");
             staticimaVillain.setImage(new Image("RPS/IMG/Vector.png"));

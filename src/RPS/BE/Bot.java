@@ -8,12 +8,14 @@ import java.util.Random;
 public class Bot {
 
     private int difficulty;
-    ArrayList<Integer> movesList;
+    private ArrayList<Integer> movesList;
     Random random;
+    private ArrayList<Integer> botMemory;
 
 
     public Bot(int difficulty){
         this.difficulty = difficulty;
+        ArrayList<Integer> botMemory = new ArrayList<>();
         random = new Random();
     }
         
@@ -54,7 +56,22 @@ public class Bot {
     }
 
     private int mediumMove(ArrayList<Integer> movesList) {
-        return random.nextInt(3);//here You need to put algorithm
+        movesList = Game.getMovesMemory();
+        botMemory = Game.getBotMemory();
+
+
+        if(botMemory.get(botMemory.size()-1)==1 && movesList.get(movesList.size()-1)==3){
+            return 2;
+        }
+        if(botMemory.get(botMemory.size()-1)==2 && movesList.get(movesList.size()-1)==1){
+            return 3;
+        }
+        if(botMemory.get(botMemory.size()-1)==3 && movesList.get(movesList.size()-1)==2){
+            return 1;
+        }
+        else{
+            return random.nextInt(3);
+        }
     }
 
     private int hardMove(ArrayList<Integer> movesList){
