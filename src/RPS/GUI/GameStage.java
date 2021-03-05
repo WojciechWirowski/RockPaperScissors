@@ -25,8 +25,8 @@ public class GameStage implements Initializable {
 
 
     public Label lblScore;
-    private Bot bot;
-    private Game game;
+    public Bot bot;
+    public static Game game;
     private MenuStage menu;
     private int enemyScore = 0;
     private int userScore = 0;
@@ -89,7 +89,7 @@ public class GameStage implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         game = new Game();
-
+        game.bot.setDifficulty(2);
         staticlblPlayer = lblPlayer;
         staticlblEnemy = lblEnemy;
         staticimaVillain = imaVillain;

@@ -99,17 +99,17 @@ public class MenuStage extends GameStage implements Initializable{
         bot = new Bot(1);
         game = new Game();
         if(easyMode.isSelected()){
-            game.bot.setDifficulty(1);
+            GameStage.game.bot.setDifficulty(1);
             staticlblEnemy.setText("Scarlet");
             staticimaVillain.setImage(new Image("RPS/IMG/Scarlet.png"));
 
         }if(normalMode.isSelected()){
-            game.bot.setDifficulty(2);
+            GameStage.game.bot.setDifficulty(2);
             staticlblEnemy.setText("Vector");
             staticimaVillain.setImage(new Image("RPS/IMG/Vector.png"));
 
         }else{
-            game.bot.setDifficulty(3);
+            GameStage.game.bot.setDifficulty(3);
             staticlblEnemy.setText("Gru");
             staticimaVillain.setImage(new Image("RPS/IMG/Gru.png"));
         }

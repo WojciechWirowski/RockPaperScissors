@@ -59,7 +59,7 @@ public class Bot {
         movesList = Game.getMovesMemory();
         botMemory = Game.getBotMemory();
 
-
+if(!botMemory.isEmpty() && !movesList.isEmpty()){
         if(botMemory.get(botMemory.size()-1)==1 && movesList.get(movesList.size()-1)==3){
             return 2;
         }
@@ -68,7 +68,10 @@ public class Bot {
         }
         if(botMemory.get(botMemory.size()-1)==3 && movesList.get(movesList.size()-1)==2){
             return 1;
+        } else{
+            return random.nextInt(3);
         }
+}
         else{
             return random.nextInt(3);
         }
